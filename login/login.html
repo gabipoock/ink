@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#c78ff0">
+  <title>InkTalk - Login</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-/U9Lfj5kFzvPWh1tboKdbZo0yIm0o4vR3upP3xQKXfF1u3ZclThLRvNQr7a0VZQXzUnzDbUZb2C9JwNYA51NAA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="container">
+    <div class="top-section">
+      <div class="login-tag">Login</div>
+      <div class="welcome-text">
+        <h1>Bem-vindo(a) ao</h1>
+      </div>
+    </div>
+    <div class="mascote-wrapper">
+      <img class="logo-img" src="../assets/pictogramas iniciais.png" alt="InkTalk Mascote">
+    </div>
+    <div class="card">
+      <h2>Sign Up</h2>
+      <form id="loginForm">
+        <label for="nome">Nome:</label>
+        <div class="input-group">
+          <i class="fa fa-user"></i>
+          <input type="text" id="nome" placeholder="Digite seu nome" required>
+        </div>
+
+        <label for="email">E-mail:</label>
+        <div class="input-group">
+          <i class="fa fa-envelope"></i>
+          <input type="email" id="email" placeholder="exemplo@gmail.com" required>
+        </div>
+
+        <label for="senha">Senha:</label>
+        <div class="input-group">
+          <i class="fa fa-lock"></i>
+          <input type="password" id="senha" placeholder="Digite sua senha" required>
+        </div>
+
+        <button class="btn" type="submit">Next</button>
+      </form>
+      <div class="login-link">
+        Já possui uma senha? <a href="#">Entrar</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #8568dc, #d27bd7);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  padding: 1rem;
+}
+
+.top-section {
+  text-align: center;
+  color: white;
+}
+
+.top-section h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100; /* Thin */
+    font-weight: 300; /* Light */ 
+    font-size: 2rem;
+    margin: 10px 0;
+    color: white;
+    padding: 50px;
+}
+
+
+.login-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  background: #9720ce;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 40px 12px 40px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: #f2da6e;
+  color: #333;
+  font-weight: bold;
+}
+
+.input-group i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #333;
+}
+
+.btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 15px;
+  color: white;
+}
+
+.login-link a {
+  color: white;
+  text-decoration: underline;
+}
+
+.mascote-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: -60px;
+  z-index: 10;
+  position: relative;
+}
+
+.logo-img {
+  width: 180px;
+  margin: 0 auto;
+  position: relative;
+  top: 30px;
+  z-index: 2;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 60px 20px 20px; /* espaçamento extra por conta do mascote */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
