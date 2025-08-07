@@ -8,7 +8,7 @@
         return;
       }
 
-      const voiceId = "MF3mGyEYCl7XYWbV9V6O";
+      const voiceId = "IGmfzACCDHYu8YfQJuVi"; // ID da voz stitch
       const apiKey = "sk_cd32d0d364f4745b95f6d0d3a5d0447c58cb947d79016b97";
 
       const response = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/stream`, {
@@ -20,7 +20,7 @@
         },
         body: JSON.stringify({
           text: text,
-          model_id: "eleven_monolingual_v1", // ou outro model_id válido
+          //model_id: "eleven_monolingual_v1", // ou outro model_id válido
           voice_settings: {
             stability: 0.5,
             similarity_boost: 0.5
