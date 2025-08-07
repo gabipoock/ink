@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcrição Reversa</title>
+    <link rel="stylesheet" href="transcricao.css">
+</head>
+<body>
+    <header class="top-bar">
+    <button id="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+  </header>
+
+      <nav id="side-menu" class="side-menu">
+    <ul>
+      <li><a href="#">Tela inicial</a></li>
+      <li><a href="#">PECS / Pictogramas</a></li>
+      <li><a href="#">Meus Cartões</a></li>
+      <li><a href="#">Transcrição Reversa</a></li>
+      <li><a href="#">Diário de Emoções</a></li>
+      <li><a href="#">Lista de Tarefas</a></li>
+      <li><a href="#">Vídeos</a></li>
+    </ul>
+  </nav>
+
+  <h1>Transcrição Reversa</h1>
+  <textarea id="textInput" placeholder="Escreva o que deseja falar..."></textarea>
+  <button onclick="generateSpeech()">Gerar Áudio</button>
+  <audio id="audioPlayer" controls=""></audio>
+
+  <script src="transcricao.js"></script>
+  
+
+</body>
+</html>
