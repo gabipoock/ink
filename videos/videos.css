@@ -1,0 +1,95 @@
+ * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #0f0f0f;
+    }
+
+    header {
+        background-color: #ffffff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    header h1 {
+        color: #ff0000;
+    }
+
+    .carousel-wrapper {
+        position: relative;
+    }
+
+    .carousel-container {
+        overflow-x: auto;
+        white-space: nowrap;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 20px;
+    }
+
+    .carousel-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .video-card {
+        display: inline-block;
+        background-color: #fff;
+        width: 300px;
+        margin-right: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        vertical-align: top;
+    }
+
+    .video-card iframe {
+        width: 100%;
+        height: 170px;
+        border: none;
+    }
+
+    .video-info {
+        padding: 10px;
+    }
+
+    .video-info h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .video-info p {
+        font-size: 14px;
+        color: #606060;
+    }
+
+    .carousel-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 20px;
+    }
+
+    .carousel-buttons button {
+        background-color: #ff0000;
+        border: none;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+    .video-card {
+        width: 250px;
+    }
+    }

@@ -1,11 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mini YouTube</title>
+    <link rel="stylesheet" href="videos.css" />
 </head>
 <body>
-    
+<header>
+    <h1>MiniYou</h1>
+    <input type="text" placeholder="Buscar..." style="padding: 5px; width: 200px;">
+</header>
+
+<div class="carousel-wrapper">
+    <div class="carousel-buttons">
+    <button onclick="scrollCarousel(-1)">&larr;</button>
+    <button onclick="scrollCarousel(1)">&rarr;</button>
+    </div>
+
+    <div class="carousel-container" id="carousel">
+    <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+        <div class="video-info">
+        <h3>Vídeo 1</h3>
+        <p>Descrição do vídeo 1</p>
+        </div>
+    </div>
+
+<div class="video-card">
+        <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" allowfullscreen></iframe>
+        <div class="video-info">
+        <h3>Vídeo 2</h3>
+        <p>Descrição do vídeo 2</p>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+        <div class="video-info">
+        <h3>Vídeo 3</h3>
+        <p>Descrição do vídeo 3</p>
+        </div>
+    </div>
+
+    <!-- Adicione mais vídeos se quiser -->
+    </div>
+</div>
+<script src="videos.js"></script>
 </body>
 </html>

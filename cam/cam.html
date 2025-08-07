@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Camera</title>
+  <link rel="stylesheet" href="cam.html">
+<meta id="dcngeagmmhegagicpcmpinaoklddcgon">
+</head>
+<body>
+  <h2>Mostra que eu te falo</h2>
+  <video id="video" autoplay="" playsinline=""></video>
+  <canvas id="canvas" style="display:none"></canvas>
+  <br>
+  <button onclick="abrirCamera('user')">Câmera Frontal</button>
+  <button onclick="abrirCamera('environment')">Câmera Traseira</button>
+  <button onclick="abrirCameraComputador()">Câmera do Computador</button>
+  <button onclick="falarObjetos()">Falar Objetos Detectados</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+  <script src="./palavras.js"></script>
+  <script src="cam.js"></script>
+
+
+
+</body>
+</html>
