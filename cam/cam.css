@@ -1,0 +1,121 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Corpo com fundo roxo claro */
+body {
+  background: #a276de; /* roxo claro */
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header fixo no topo */
+header {
+  background-color: #7b2fbe; /* roxo escuro */
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 20px;
+  color: #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  user-select: none;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* Espaço para conteúdo abaixo do header */
+.main-content {
+  padding-top: 80px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Video com borda arredondada e borda fina */
+#video {
+  width: 300px;
+  height: 300px;
+  border-radius: 30px;
+  border: 1.5px solid #2a0d4f;
+  background: #fff;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+/* Canvas invisível */
+#canvas {
+  display: none;
+}
+
+/* Botões alinhados e estilizados */
+.buttons-row {
+  margin-top: 25px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  background-color: #7b2fbe;
+  border: none;
+  color: #eee;
+  font-weight: 600;
+  padding: 10px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.25);
+  transition: background-color 0.3s ease;
+  min-width: 150px;
+}
+
+button:hover {
+  background-color: #6a28a7;
+}
+
+/* Botão circular flutuante inferior direito */
+.floating-upload {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  background-color: #7b2fbe;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  color: #eee;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: background-color 0.3s ease;
+  z-index: 200;
+}
+
+.floating-upload:hover {
+  background-color: #6a28a7;
+}
+
+/* Texto do título principal, centralizado acima do vídeo */
+h2 {
+  margin-bottom: 20px;
+  color: #eee;
+  font-weight: 600;
+  text-align: center;
+  font-size: 18px;
+}
