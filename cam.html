@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cams</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+</head>
+<body>
+  <h2>Tira foto</h2>
+  <video id="video" width="640" height="480" autoplay muted></video>
+  <canvas id="canvas" width="640" height="480"></canvas>
+
+  <div>
+    <button onclick="tirarFoto()">Tirar Foto e Detectar</button>
+    <button onclick="falarObjetos()">Falar Objetos Detectados</button>
+    <button onclick="salvarFoto()">Salvar Foto</button>
+  </div>
+
+  <canvas id="foto" width="640" height="480"></canvas>
+
+  <script>
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const fotoCanvas = document.getElementById('foto');
+    const fotoCtx = fotoCanvas.getContext('2d');
+
+    let modelo;
+    let objetosDetectados = [];
+
+    const traducaoPT = {
+      'person': 'pessoa',
+      'bottle': 'garrafa',
+      'cell phone': 'celular',
+      'laptop': 'notebook',
+      'keyboard': 'teclado',
+      'mouse': 'mouse',
+      'chair': 'cadeira',
+      'cup': 'copo',
+      'tv': 'televisão',
+      'book': 'livro',
+      'backpack': 'mochila',
+      'dog': 'cachorro',
+      'cat': 'gato',
+      'remote': 'controle remoto',
+      'bench': 'banco',
+      'handbag': 'bolsa',
+      'tie': 'gravata',
+      'potted plant': 'planta em vaso',
+      'scissors': 'tesoura',
+      'clock': 'relógio',
+      'microwave': 'micro-ondas',
+      'oven': 'forno',
+      'sink': 'pia',
+      'refrigerator': 'geladeira',
+      'toaster': 'torradeira',
+      'umbrella': 'guarda-chuva',
+      'suitcase': 'mala'
+    };
+
+    async function iniciarCamera() {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      video.srcObject = stream;
+      return new Promise(resolve => {
+        video.onloadedmetadata = () => resolve(video);
+      });
+    }
+
+    async function carregarModelo() {
+      modelo = await cocoSsd.load();
+    }
+
+    async function tirarFoto() {
+      fotoCtx.drawImage(video, 0, 0, fotoCanvas.width, fotoCanvas.height);
+
+      const predictions = await modelo.detect(fotoCanvas);
+      objetosDetectados = predictions.map(p => p.class);
+
+      fotoCtx.lineWidth = 2;
+      fotoCtx.font = "16px Arial";
+      fotoCtx.strokeStyle = "#00FF00";
+      fotoCtx.fillStyle = "#00FF00";
+
+      predictions.forEach(obj => {
+        const [x, y, w, h] = obj.bbox;
+        fotoCtx.strokeRect(x, y, w, h);
+        const nomePT = traducaoPT[obj.class] || obj.class;
+        fotoCtx.fillText(nomePT, x, y > 10 ? y - 5 : 10);
+      });
+
+      console.log("o que estou vendo", objetosDetectados);
+    }
+
+    function salvarFoto() {
+      const link = document.createElement('a');
+      link.download = 'foto-com-objetos.png';
+      link.href = fotoCanvas.toDataURL();
+      link.click();
+    }
+
+    function falarObjetos() {
+      if (objetosDetectados.length === 0) {
+        alert("Nenhum objeto detectado. Tire uma foto primeiro.");
+        return;
+      }
+
+      const nomesTraduzidos = [...new Set(objetosDetectados.map(obj => traducaoPT[obj] || obj))];
+      const mensagem = `${nomesTraduzidos.join(', ')}`;
+
+      const fala = new SpeechSynthesisUtterance(mensagem);
+      fala.lang = 'pt-BR';
+      fala.rate = 1;
+      fala.pitch = 1;
+      speechSynthesis.speak(fala);
+    }
+
+    iniciarCamera().then(() => video.play());
+    carregarModelo();
+  </script>
+</body>
+</html>
