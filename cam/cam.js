@@ -81,30 +81,7 @@ async function tirarFoto() {
     fotoCtx.clearRect(0,0,fotoCanvas.width,fotoCanvas.height);
     fotoCtx.drawImage(video, 0, 0, fotoCanvas.width, fotoCanvas.height);
 
-    // se o modelo estiver pronto, detecta objetos e desenha caixas/nomes
-    if (modelLoaded && modelo) {
-      const predictions = await modelo.detect(fotoCanvas);
-      objetosDetectados = predictions.map(p => p.class);
-
-      // compatibilidade com nomes (traducaoPT ou dicionario)
-      const translate = window.traducaoPT || window.dicionario || {};
-
-      fotoCtx.strokeStyle = '#ff0';
-      fotoCtx.lineWidth = 2;
-      fotoCtx.fillStyle = '#ff0';
-      fotoCtx.font = '16px Arial';
-
-      predictions.forEach(obj => {
-        const [x, y, w, h] = obj.bbox;
-        fotoCtx.strokeRect(x, y, w, h);
-        const nomePT = translate[obj.class] || obj.class;
-        const textY = (y > 18) ? y - 6 : y + 18;
-        fotoCtx.fillText(nomePT, x, textY);
-      });
-    } else {
-      console.log('Modelo não carregado ainda — abrindo modal sem anotações.');
-    }
-
+   
     // abre modal
     const modal = document.getElementById('fotoModal');
     if (modal) modal.style.display = 'flex';
