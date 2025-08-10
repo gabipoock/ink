@@ -25,6 +25,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 #menu-toggle {
   font-size: 1.5rem;
@@ -116,8 +117,8 @@ header {
 
 /* Video com borda arredondada e borda fina */
 #video {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   border-radius: 30px;
   border: 2px solid #7b58aa;
   background: #fff;
@@ -133,7 +134,8 @@ header {
 
 /* Botões alinhados e estilizados */
 .buttons-row {
-  margin-top: 25px;
+  margin-top: 20px;
+  margin-bottom: 30px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -189,6 +191,7 @@ h2 {
   font-weight: 600;
   text-align: center;
   font-size: 18px;
+  margin-top: 80px;
 }
 
 .container{
