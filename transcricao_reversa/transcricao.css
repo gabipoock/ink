@@ -87,12 +87,13 @@
       font-weight: 300;
       margin-bottom: 1rem;
       color: #b929d2;
+        text-align: center;
     }
 
     textarea {
       width: 90%;
       max-width: 600px;
-      height: 150px;
+      height: 210px;
       padding: 1rem;
       border-radius: 10px;
       border: none;
@@ -125,3 +126,31 @@
       width: 100%;
       max-width: 600px;
     }
+
+  .voice-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.voice-buttons button {
+  background-color: #ab48d3;   /* cor padrão (roxo) */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+}
+
+.voice-buttons button:hover {
+  background-color: #d43be2;
+}
+
+/* estado selecionado */
+.voice-buttons button.active {
+  background-color: #6e17a6;   /* destaque (escolha de tom roxo mais escuro) */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
