@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PWA -Homepage</title>
-  <link rel="stylesheet" href="homepage.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lista de Tarefas</title>
+<link rel="stylesheet" href="lista.css">
 </head>
+
 <body>
-  <header class="top-bar">
+      <header class="top-bar">
     <button id="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+    <h1 class="top-bar-title">Minhas Tarefas</h1>
   </header>
 
   <nav id="side-menu" class="side-menu">
@@ -24,19 +26,16 @@
       <li><a href="../videos/videos.html">Vídeos</a></li>
     </ul>
   </nav>
-
-<main class="main-content">
-  <div class="mascot-container">
-    <img src="../assets/gif.gif" alt="Mascote" class="mascot-img" />
-    <p class="description">
-      Somos um aplicativo inclusivo criado para facilitar a comunicação através
-      de pictogramas, cartões e conversão de texto em áudio. Pensado especialmente
-      para pessoas com dificuldades de comunicação.
-    </p>
+  <div id="app">
+    
+    <div class="task-list" id="taskList">
+      <!-- Tarefas iniciais via JS -->
+    </div>
+    <button id="addTaskBtn">Adicionar Tarefa</button>
   </div>
-</main>
+
+<script src="lista.js"></script>
 
 
-  <script src="homepage.js"></script>
 </body>
 </html>

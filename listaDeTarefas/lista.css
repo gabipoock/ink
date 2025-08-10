@@ -1,0 +1,164 @@
+ /* Reset básico */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background:  #f5d87a;
+    margin: 0;
+    
+    display: flex;
+    justify-content: center;
+  }
+  .top-bar {
+  background-color: #eecc77;
+  padding: 0.5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+/* Título do header */
+.top-bar-title {
+  margin: 0 auto;          /* Centraliza horizontalmente */
+  text-align: center;      /* Centraliza texto dentro do elemento */
+  line-height: 60px;       /* Alinha verticalmente no header (que tem 60px) */
+  font-size: 1.5rem;       /* Deixa o tamanho responsivo */
+  font-weight: 600;
+  color: #000000;
+  width: 100%;             /* Faz o título ocupar toda a largura disponível */
+}
+  #menu-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Menu lateral - ocupa 100% da tela */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 25vw;
+  background-color: rgba(255, 255, 255, 0.98);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+  transition: all 0.3s ease;
+}
+
+.side-menu.open {
+  display: flex;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.side-menu li {
+  padding: 1rem;
+  text-align: center;
+}
+
+.side-menu a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.side-menu a:hover {
+  text-decoration: underline;
+}
+    /* Estilo do container principal */
+  #app {
+    max-width: 480px;
+    width: 100%;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4a3a7c;
+  }
+  .task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 100px;
+  }
+  .task {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 15px;
+    gap: 10px;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 0.1);
+  }
+  .task input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  .task input[type="text"] {
+    flex: 1;
+    font-size: 1rem;
+    border: none;
+    background: transparent;
+    outline: none;
+    color: #222;
+  }
+  /* cores alternadas: roxa e azul */
+  .task.purple {
+    background-color: #f2caff;
+    color: #3a0ca3;
+    border: 1px solid #8409ff;
+  }
+  .task.blue {
+    background-color: #cad6ff;
+    color: #084298;
+    border: 1px solid #0932ff;
+  }
+  /* Adiciona placeholder para o input */
+  .task input[type="text"]::placeholder {
+    color: #555;
+  }
+
+  /* Botão adicionar */
+  #addTaskBtn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #6f42c1;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  #addTaskBtn:hover {
+    background-color: #4b2a8c;
+  }
+
+  /* Responsividade */
+  @media (max-width: 600px) {
+    body {
+      padding: 10px;
+    }
+    .task input[type="text"] {
+      font-size: 0.9rem;
+    }
+    #addTaskBtn {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  }
