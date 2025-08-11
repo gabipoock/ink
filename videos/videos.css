@@ -5,20 +5,19 @@
 }
 
 body {
-    padding: 80px 0px 30px ;
+    padding: 0px 0px 30px ;
     font-family: 'Comic Neue', Arial, sans-serif;
     color: #0f0f0f;
     background-color: #feffad;
     
 }
-
-/* Barra superior fixa */
-.top-bar {
-    background-color: #7a35b6;
-    padding: 0.1rem;
-    position: fixed;
+/* Menu hambúrguer atualizado */
+header {
     width: 100%;
+    padding: 1rem;
+    position: relative;
     z-index: 10;
+    background-color: #7a35b6;
     top: 0;
     display: flex;
     justify-content: flex-start;
@@ -30,55 +29,63 @@ body {
     
 }
 
-/* Botão do menu */
-#menu-toggle {
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: #ffffff;
-  cursor: pointer;
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-/* Menu lateral - ocupa 100% da tela */
-.side-menu {
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.menu-toggle span {
+  background: #181818;
+  height: 3px;
+  margin: 4px 0;
+  width: 25px;
+  border-radius: 2px;
+  text-shadow: #000 1px 1px 2px;
+}
+
+/* Menu lateral estilo slide */
+.nav-list {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -300px; /* escondido inicialmente */
   height: 100vh;
-  width: 25vw;
-  background-color: rgba(255, 255, 255, 0.98);
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 9;
-  transition: all 0.3s ease;
-}
-
-.side-menu.open {
+  width: 260px;
+  background-color: white;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.2);
+  padding: 2rem 1rem;
+  transition: left 0.3s ease;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 15;
 }
 
-.side-menu ul {
+.nav-list li {
   list-style: none;
-  padding: 0;
-  width: 100%;
-}
-
-.side-menu li {
-  padding: 1rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.side-menu a {
-  color: #000;
+.nav-list li a {
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2rem;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
 }
 
-.side-menu a:hover {
-  text-decoration: underline;
+.nav-list.show {
+  left: 0;
 }
 
 
