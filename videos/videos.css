@@ -1,17 +1,20 @@
- * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    body {
-        font-family: Arial, sans-serif;
-        color: #0f0f0f;
-        background-image: radial-gradient(circle, rgb(252, 163, 237), rgb(248, 248, 129) , rgb(206, 141, 223));
-    }
-    /* Barra superior fixa */
+body {
+    padding: 80px 0px 30px ;
+    font-family: 'Comic Neue', Arial, sans-serif;
+    color: #0f0f0f;
+    background-color: #feffad;
+    
+}
+
+/* Barra superior fixa */
 .top-bar {
-    background-color: #eecc77;
+    background-color: #7a35b6;
     padding: 0.1rem;
     position: fixed;
     width: 100%;
@@ -24,8 +27,6 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-       
-        top: 0;
     
 }
 
@@ -34,7 +35,7 @@
   font-size: 1.5rem;
   background: none;
   border: none;
-  color: #333;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -82,77 +83,97 @@
 
 
 
-    header h2 {
-        color: #000000;
-        font-size: 24px;
-        justify-content: center;
-        margin-left: 9%;
-    }
+header h2 {
+    color: #ffffff;
+    font-size: 24px;
+    justify-content: center;
+    margin-left: 9%;
 
-    .carousel-wrapper {
-        position: relative;
-    }
+    text-shadow: #000 1px 1px 2px;
+}
 
-    .carousel-container {
-        overflow-x: auto;
-        white-space: nowrap;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-        padding: 20px;
-    }
+.carousel-wrapper {
+    position: relative;
+}
 
-    .carousel-container::-webkit-scrollbar {
-        display: none;
-    }
+.carousel-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px;
+}
+/* Título das seções */
+.section-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #444;
+    background-color: yellow;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: left;
+}
 
-    .video-card {
-        display: inline-block;
-        background-color: #fff;
-        width: 300px;
-        margin-right: 15px;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        vertical-align: top;
-    }
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
 
-    .video-card iframe {
-        width: 100%;
-        height: 170px;
-        border: none;
-    }
+.video-card {
+    display: inline-block;
+    background-color: #ffffff57;
+    width: 300px;
+    margin-right: 15px;
+    border-radius: 10px;
+    border: #000000 solid 1px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(71, 69, 69, 0.308);
+    vertical-align: top;
+    padding: 10px 10px;
+}
 
-    .video-info {
-        padding: 10px;
-    }
+.video-card iframe {
+    width: 280px;
+    height: 170px;
+    border: none;
+    border-radius: 8px;
+} 
 
-    .video-info h3 {
-        font-size: 16px;
-        margin-bottom: 5px;
-    }
+.video-info {
+    padding: 10px;
+}
+.video-info h3 {
+    font-size: clamp(14px, 2.5vw, 16px); /* mínimo 14px, cresce até 16px */
+    margin: 5px 2px;
+    line-height: 1.5;
+    word-wrap: break-word; /* quebra em telas pequenas */
+    
+}
 
-    .video-info p {
-        font-size: 14px;
-        color: #606060;
-    }
+.video-info p {
+    font-size: 14px;
+    color: #606060;
+}
 
-    .carousel-buttons {
-        display: flex;
-        justify-content: space-between;
-        margin: 0 20px;
-    }
+.carousel-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
 
-    .carousel-buttons button {
-        background-color: #ff0000;
-        border: none;
-        color: #fff;
-        padding: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+.carousel-buttons button {
+    background-color: #dc94e6;
+    border: 1px solid #8faaf5;
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 5px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
 
-    @media (max-width: 768px) {
-    .video-card {
-        width: 250px;
-    }
-    }
+@media (max-width: 768px) {
+.video-card {
+    width: 250px;
+}
+}
