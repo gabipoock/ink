@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diário de Emoções</title>
+  <link rel="stylesheet" href="diario.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Como foi seu dia?</h1>
+
+    <textarea id="textoEmocao" placeholder="Como foi seu dia? O que está sentindo?"></textarea>
+
+    <div class="emocoes">
+      <label style="background:#ffff88"><input type="radio" name="emocao" value="feliz"> Feliz 😀</label>
+      <label style="background:#84b6f4"><input type="radio" name="emocao" value="triste"> Triste 🥺</label>
+      <label style="background:#a8e6cf"><input type="radio" name="emocao" value="calmo"> Calmo 😌</label>
+      <label style="background:#fda4ff"><input type="radio" name="emocao" value="medo"> Medo 😨</label>
+      <label style="background:#f76c6c"><input type="radio" name="emocao" value="raiva"> Raiva 😠</label>
+    </div>
+
+    <button onclick="salvarEmocao()">Salvar Emoção</button>
+  </main>
+
+  <script src="diario.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: radial-gradient(circle, rgb(252, 163, 237), rgb(248, 248, 129) , rgb(206, 141, 223));
+      font-family: Arial, sans-serif;
+      color: #f1f1f1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      height: 100vh;
+    }
+    
+/* Barra superior fixa */
+.top-bar {
+  background-color: #eecc77;
+  padding: 0.1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Botão do menu */
+#menu-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Menu lateral - ocupa 100% da tela */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 25vw;
+  background-color: rgba(255, 255, 255, 0.98);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+  transition: all 0.3s ease;
+}
+
+.side-menu.open {
+  display: flex;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.side-menu li {
+  padding: 1rem;
+  text-align: center;
+}
+
+.side-menu a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.side-menu a:hover {
+  text-decoration: underline;
+}
+
+
+    h1 {
+      font-size: 1.8rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 300;
+      margin-bottom: 1rem;
+      color: #b929d2;
+        text-align: center;
+    }
+
+    textarea {
+      width: 90%;
+      max-width: 600px;
+      height: 210px;
+      padding: 1rem;
+      border-radius: 10px;
+      border: none;
+      resize: none;
+      background-color: #2d2d44;
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      outline: none;
+    }
+
+    button {
+      background-color: #b929d2;
+      color: #f7f7fd;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-bottom: 1rem;
+    }
+
+    button:hover {
+      background-color: #c015bd;
+    }
+
+    audio {
+      margin-top: 1rem;
+      width: 100%;
+      max-width: 600px;
+    }
+
+  .voice-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.voice-buttons button {
+  background-color: #ab48d3;   /* cor padrão (roxo) */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+}
+
+.voice-buttons button:hover {
+  background-color: #d43be2;
+}
+
+/* estado selecionado */
+.voice-buttons button.active {
+  background-color: #6e17a6;   /* destaque (escolha de tom roxo mais escuro) */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+

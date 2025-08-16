@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lista de Tarefas</title>
+<link rel="stylesheet" href="lista.css">
+</head>
+
+<body>
+      <header class="top-bar">
+    <button id="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+    <h1 class="top-bar-title">Minhas Tarefas</h1>
+  </header>
+
+  <nav id="side-menu" class="side-menu">
+    <ul>
+      <li><a href="#">Tela inicial</a></li>
+      <li><a href="../login/login.html">Voltar ao Login</a></li>
+      <li><a href="../Pictogramas/Dist/pictogramas.html">PECS / Pictogramas</a></li>
+      <li><a href="../cam/cam.html">Câmera</a></li>
+      <li><a href="../transcricao_reversa/trancricao.html">Transcrição Reversa</a></li>
+      <li><a href="../calendario/calendar.html">Calendário</a></li>
+      <li><a href="../diario/diario.html">Diário de Emoções</a></li>
+      <li><a href="../listaDeTarefas/listaDeTarefas.html">Lista de Tarefas</a></li>
+      <li><a href="../videos/videos.html">Vídeos</a></li>
+    </ul>
+  </nav>
+  <div id="app">
+    
+    <div class="task-list" id="taskList">
+      <!-- Tarefas iniciais via JS -->
+    </div>
+    <button id="addTaskBtn">Adicionar Tarefa</button>
+  </div>
+
+<script src="lista.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo base */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif; 
+  background-color: #eecc77;
+}
+
+span{
+  color: #000 !important;
+}
+
+a{
+  text-decoration: none;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  gap: 10px;
+  margin-bottom: 5rem;
+  font-family: 'inder', sans-serif;
+  padding: 1rem;
+  width: 100%;
+}
+
+.header .menu-toggle {
+  position: absolute;
+  left: 0;
+}
+
+
+/* Barra superior fixa */
+.top-bar {
+  background-color: #eecc77;
+  padding: 0.5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Menu hambúrguer atualizado */
+header {
+  width: 100%;
+  background-color: transparent;
+  padding: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.menu-toggle span {
+  background: #333;
+  height: 3px;
+  margin: 4px 0;
+  width: 25px;
+  border-radius: 2px;
+}
+
+/* Menu lateral estilo slide */
+.nav-list {
+  position: fixed;
+  top: 0;
+  left: -300px; /* escondido inicialmente */
+  height: 100vh;
+  width: 260px;
+  background-color: white;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.2);
+  padding: 2rem 1rem;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 15;
+}
+
+.nav-list li {
+  list-style: none;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.nav-list.show {
+  left: 0;
+}
+
+.header h1{
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0;
+  text-align: center;
+  font-family: 'inder', sans-serif;
+}
+
+.section-title {
+  margin: 20px 0 10px;
+  font-family: 'inder', sans-serif;
+}
+
+.title{
+  font-size: 1.5rem;
+}
+
+/* Cartões */
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+  padding: 10px;
+  transition: transform 0.2s;
+  font-family: 'inder', sans-serif;
+  border: 1px solid #555;
+  box-sizing: border-box;
+  overflow: hidden;
+
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card.blue {
+  background-color: #cad6ff;
+  border: 2px solid #0932ff;
+}
+
+.card.pink {
+  background-color: #f3caff;
+  border: 2px solid #8409ff;
+}
+
+.card img {
+  width: clamp(100px, 10vw, 60px);
+  height: auto;
+  margin-right: 15px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.card span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row; /* Garante layout horizontal */
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap; /* Impede quebra de linha */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #555;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+  }
+
+  .card img {
+    margin: 0 0 10px 0;
+  }
+
+  .card span {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+@media (max-width: 480px) {
+  .menu-icon {
+    font-size: 20px;
+  }
+
+  .card img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .card span {
+    font-size: 15px;
+  }
+}

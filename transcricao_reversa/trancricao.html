@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcrição Reversa</title>
+    <link rel="stylesheet" href="transcricao.css">
+</head>
+<body>
+    <header class="top-bar">
+    <button id="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+  </header>
+
+  <h1 class="titulo-central">Transcrição Reversa</h1>
+      <nav id="side-menu" class="side-menu">
+    <ul>
+      <li><a href="../homepage/homepage.html">Tela inicial</a></li>
+      <li><a href="../login/login.html">Voltar ao Login</a></li>
+      <li><a href="../Pictogramas/Dist/pictogramas.html">PECS / Pictogramas</a></li>
+      <li><a href="../cam/cam.html">Câmera</a></li>
+      <li><a href="../transcricao_reversa/trancricao.html">Transcrição Reversa</a></li>
+      <li><a href="../calendario/calendar.html">Calendário</a></li>
+      <li><a href="../diario/diario.html">Diário de Emoções</a></li>
+      <li><a href="../listaDeTarefas/listaDeTarefas.html">Lista de Tarefas</a></li>
+      <li><a href="../videos/videos.html">Vídeos</a></li>
+    </ul>
+  </nav>
+
+  <!--Bem-vindo ao nosso aplicativo para pessoas não verbais! Este é um espaço pensado
+  especialmente para facilitar a comunicação através da ferramenta de Transcrição Reversa,
+  que transforma o texto digitado em áudio falado, ajudando a criança a se expressar com facilidade 
+  e autonomia. Sinta-se à vontade para escolher a voz que mais gostar e usar o aplicativo para tornar
+  a comunicação mais acessível e divertida!  -->
+
+
+  <textarea id="textInput" placeholder="Escreva o que deseja falar..."></textarea>
+
+<div class="voice-buttons">
+  <button type="button" data-voice-id="IGmfzACCDHYu8YfQJuVi" id="voice1">Voz 1</button>
+  <button type="button" data-voice-id="wdningr16n0MvLck8Gwh" id="voice2">Voz 2</button>
+</div>
+
+<button id="generateBtn" type="button">Gerar Áudio</button>
+<audio id="audioPlayer" controls></audio>
+
+
+  <script src="transcricao.js"></script>
+  
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inder', sans-serif;
+  background-color: #eecc77;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.header {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  gap: 10px;
+  margin-bottom: 5rem;
+  font-family: 'inder', sans-serif;
+  padding: 1rem;
+  width: 100%;
+}
+
+.header .menu-toggle {
+  position: absolute;
+  left: 0;
+}
+
+
+/* Barra superior fixa */
+.top-bar {
+  background-color: #eecc77;
+  padding: 0.5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.header {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  gap: 10px;
+  margin-bottom: 5rem;
+  font-family: 'inder', sans-serif;
+  padding: 1rem;
+  width: 100%;
+}
+
+.header .menu-toggle {
+  position: absolute;
+  left: 0;
+}
+
+
+/* Barra superior fixa */
+.top-bar {
+  background-color: #eecc77;
+  padding: 0.5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Menu hambúrguer atualizado */
+header {
+  width: 100%;
+  background-color: transparent;
+  padding: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.menu-toggle span {
+  background: #333;
+  height: 3px;
+  margin: 4px 0;
+  width: 25px;
+  border-radius: 2px;
+}
+
+/* Menu lateral estilo slide */
+.nav-list {
+  position: fixed;
+  top: 0;
+  left: -300px; /* escondido inicialmente */
+  height: 100vh;
+  width: 260px;
+  background-color: white;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.2);
+  padding: 2rem 1rem;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 15;
+}
+
+.nav-list li {
+  list-style: none;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.nav-list.show {
+  left: 0;
+}
+
+.header h1{
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.card {
+  width: min(320px, 80vw);              
+  aspect-ratio: 1 / 1;       
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px 16px 16px; 
+  box-sizing: border-box;
+  margin: 24px auto;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  background: #ffde4ab6;         
+  position: relative;
+}
+
+.title{
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  padding: 0 48px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'inder', sans-serif;
+  text-align: center;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.section-title{
+  margin: 32px 0 16px 0;
+  font-size: 1.3rem;
+  text-align: left;
+  padding-left: 5vw;
+  font-weight: bold;
+  color: #444;
+}
+
+.card.blue {
+  background-color: #cad6ff;
+  border: 2px solid #0932ff;
+}
+
+.card.pink {
+  background-color: #f3caff;
+  border: 2px solid #8409ff;}
+
+.card img {
+  width: 80%;                
+  height: auto;
+  margin-bottom: 16px;
+  margin-top: 4px;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  object-fit: contain;
+
+}
+
+.card span {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: auto;          
+  color: #333;
+  display: block;
+  width: 100%;
+  padding-bottom: 4px;
+}
+
+@media (max-width: 500px) {
+  .card {
+    width: 90vw;
+    padding: 12px 6vw;
+  }
+  .section-title {
+    padding-left: 6vw;
+  }
+  .title {
+    font-size: 1.2rem;
+  }
+}

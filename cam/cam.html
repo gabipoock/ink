@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Camera</title>
+  <link rel="stylesheet" href="cam.css">
+<meta id="dcngeagmmhegagicpcmpinaoklddcgon">
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0/dist/tf.min.js"></script>
+<!-- Menu Hambúrguer -->
+  <header>
+    <nav class="navbar">
+      <div class="menu-toggle" id="mobile-menu">
+        
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-list" id="nav-list">
+      <li><a href="../homepage/homepage.html">Tela inicial</a></li>
+      <li><a href="../login/login.html">Voltar ao Login</a></li>
+      <li><a href="../Pictogramas/Dist/pictogramas.html">PECS / Pictogramas</a></li>
+      <li><a href="../cam/cam.html">Câmera</a></li>
+      <li><a href="../transcricao_reversa/trancricao.html">Transcrição Reversa</a></li>
+      <li><a href="../calendario/calendar.html">Calendário</a></li>
+      <li><a href="../diario/diario.html">Diário de Emoções</a></li>
+      <li><a href="../listaDeTarefas/listaDeTarefas.html">Lista de Tarefas</a></li>
+      <li><a href="../videos/videos.html">Vídeos</a></li>
+      </ul>
+    </nav>
+    <p class="top-bar-title">Câmera</p>
+  </header>
+</head>
+<body>
+  
+  
+  <div class="main-content">
+    <h2>Mostra que eu te falo</h2>
+
+    <video id="video" autoplay muted></video>
+    <canvas id="canvas"></canvas>
+
+    <div class="buttons-row">
+      <button onclick="abrirCamera('user')">Câmera Frontal</button>
+      <button onclick="abrirCamera('environment')">Câmera Traseira</button>
+      <button onclick="abrirCameraComputador()">Câmera do Computador</button>
+      <button onclick="falarObjetos()">Falar Objetos Detectados</button>
+      <button onclick="tirarFoto()">Tirar Foto </button>
+    </div>
+  </div>
+
+  <div class="container" role="main">
+    <h1>Upload de imagens</h1>
+    <p class="lead">Clique no botão ou arraste imagens aqui (suporta dispositivos móveis). Pré-visualização automática e validação de tipo/porte.</p>
+
+    <div id="uploadArea" class="upload" tabindex="0">
+      <label for="fileInput" class="dropzone" aria-hidden="true">
+        <div class="icon" aria-hidden="true">
+          <!-- simple svg icon -->
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 3v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 10l7-7 7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="3" y="13" width="18" height="8" rx="2" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <div>
+          <div class="drop-text">Arraste e solte imagens aqui ou</div>
+          <div style="font-size:13px;color:var(--muted)">JPEG, PNG, WEBP — até 8 MB por arquivo</div>
+        </div>
+      </label>
+
+      <div class="actions">
+        <input id="fileInput" type="file" accept="image/*" multiple />
+        <button id="chooseBtn" class="btn" type="button">imagens</button>
+        <button id="clearBtn" class="btn ghost" type="button">Limpar</button>
+      </div>
+    </div>
+
+    <div id="preview" class="preview-grid" aria-live="polite" aria-atomic="true"></div>
+
+    <template id="previewTpl">
+      <div class="preview">
+        <img src="" alt="preview" />
+        <div class="meta">
+          <span class="name"></span>
+          <button class="remove" type="button" title="Remover">✕</button>
+        </div>
+      </div>
+    </template>
+  </div>
+  <section class="fotoFinal" id="fotoModal">
+  <div class="fotoFinal-content">
+    <canvas id="foto" width="600" height="420"></canvas>
+    <div class="fotoFinal-buttons">
+      <button onclick="salvarFoto()">Salvar Foto</button>
+      <button onclick="fecharModal()">Cancelar</button>
+    </div>
+  </div>
+</section>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+  <script src="./palavras.js"></script>
+  <script src="cam.js"></script>
+  <script src="btn_upload.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "InkTalk",
+  "short_name": "InkTalk",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#8568dc",
+  "theme_color": "#8568dc",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+// esse é a configuração do manifest.json para o InkTalk, que define o nome, ícones e cores do aplicativo.
