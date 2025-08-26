@@ -87,6 +87,7 @@ header {
   flex-direction: column;
   justify-content: flex-start;
   z-index: 15;
+  top:-17px;
 }
 
 .nav-list li {
