@@ -12,28 +12,30 @@
   <!-- OBSERVAÇÃO! Aqui no Dia a Dia e nas próximas partes dos pictogramas, vc deve
   aumentar os tamanhos das caixas/boxes e deixá-las em formato quadrado, seguindo o flutterflow
   se usar o mesmo modelo dos pictogramas iniciais, irão ficar pequenos e retangulares  -->
-<header class="top-bar">
-  <button id="menu-toggle" aria-label="AbriPr menu">&#9776;</button>
-  <h1 class="title">Pictogramas - Roupas</h1>
-</header>
-
-
-  <!-- Depois que criar uma caixa quadrada, para seguir o padrão de tamnho e ficar mais simples,
-  de o ctrl C e ctrl V apenas, mudando só as imagens dos pictogramas. DEIXE A PÁGINA RESPONSIVA!
-  quando terminar a página do Dia a Dia, é só copiar a página para fazer as outras responsivas e 
-  no mesmo formato!! -->
-  <nav id="side-menu" class="side-menu">
-    <button id="close-menu" aria-label="Fechar menu">✕</button>
-    <ul>
-      <li><a href="#">Tela inicial</a></li>
-      <li><a href="#">PECS / Pictogramas</a></li>
-      <li><a href="#">Meus Cartões</a></li>
-      <li><a href="#">Transcrição Reversa</a></li>
-      <li><a href="#">Diário de Emoções</a></li>
-      <li><a href="#">Lista de Tarefas</a></li>
-      <li><a href="#">Vídeos</a></li>
-    </ul>
-  </nav>
+<header>
+    <nav class="navbar">
+      <div class="header">
+        <div class="menu-toggle" id="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <h1 class="Title">Pictogramas - Roupas</h1>
+        </div>
+      </div>
+      <ul class="nav-list" id="nav-list">
+      <li><a href="/homepage/homepage.html">Tela inicial</a></li>
+      <li><a href="/login/login.html">Voltar ao Login</a></li>
+      <li><a href="/Pictogramas/Dist/pictogramas.html">PECS / Pictogramas</a></li>
+      <li><a href="/cam/cam.html">Câmera</a></li>
+      <li><a href="/transcricao_reversa/trancricao.html">Transcrição Reversa</a></li>
+      <li><a href="/calendario/calendar.html">Calendário</a></li>
+      <li><a href="/diario/diario.html">Diário de Emoções</a></li>
+      <li><a href="/listaDeTarefas/listaDeTarefas.html">Lista de Tarefas</a></li>
+      <li><a href="/videos/videos.html">Vídeos</a></li>
+      </ul>
+    </nav>
+  </header>
 
 <div class="card blue">
       <img src="/Pictogramas/Imagens/Roupa/Camiseta.png" alt="Camiseta" class="card-image">
@@ -104,6 +106,6 @@
     </div>
 
     </div>
-  <script src="Roupas.js"></script>
+  <script src="Roupa.js"></script>
 </body>
 </html>

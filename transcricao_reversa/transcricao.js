@@ -1,7 +1,10 @@
-// abrir/fechar menu lateral
-document.getElementById('menu-toggle').addEventListener('click', () => {
-  document.querySelector('.side-menu').classList.toggle('open');
+const navList = document.getElementById('nav-list');
+const menuToggle = document.getElementById('mobile-menu');
+
+menuToggle.addEventListener('click', () => {
+  navList.classList.toggle('show');
 });
+
 
 // IDs das vozes
 const voices = {

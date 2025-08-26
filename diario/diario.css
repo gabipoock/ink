@@ -4,6 +4,120 @@ body {
   padding: 2rem 1rem;
 }
 
+.header {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  gap: 10px;
+  margin-bottom: 5rem;
+  font-family: 'inder', sans-serif;
+  padding: 1rem;
+  width: 100%;
+}
+
+.header .menu-toggle {
+  position: absolute;
+  left: 0;
+}
+
+
+/* Barra superior fixa */
+.top-bar {
+  background-color: #eecc77;
+  padding: 0.5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Menu hambúrguer atualizado */
+header {
+  width: 100%;
+  background-color: transparent;
+  padding: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Botão do menu */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 30; /* sempre acima do menu */
+  position: fixed; /* fixar no canto da tela */
+  top: 20px;
+  left: 20px;
+}
+
+/* Quando o menu lateral estiver aberto, esconder o botão */
+.nav-list.show ~ .menu-toggle {
+  display: none;
+}
+
+.menu-toggle span {
+  background: #333;
+  height: 3px;
+  margin: 4px 0;
+  width: 25px;
+  border-radius: 2px;
+}
+
+/* Menu lateral estilo slide */
+.nav-list {
+  position: fixed;
+  top: 0;
+  left: -300px; /* escondido inicialmente */
+  height: 100vh;
+  width: 260px;
+  background-color: white;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.2);
+  padding: 2rem 1rem;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 15;
+}
+
+.nav-list li {
+  list-style: none;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.nav-list.show {
+  left: 0;
+}
+
+.header h1{
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+
 .container {
   max-width: 500px;
   margin: 0 auto;

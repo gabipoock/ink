@@ -1,8 +1,11 @@
- 
- //abrir menu
-document.getElementById('menu-toggle').addEventListener('click', () => {
-  document.querySelector('.side-menu').classList.toggle('open');
+const navList = document.getElementById('nav-list');
+const menuToggle = document.getElementById('mobile-menu');
+
+menuToggle.addEventListener('click', () => {
+  navList.classList.toggle('show');
 });
+
+
 
 //tarefas
     const taskList = document.getElementById('taskList');

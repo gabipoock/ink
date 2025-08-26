@@ -5,12 +5,26 @@
   body {
     font-family: Arial, sans-serif;
     background:  #f5d87a;
-    margin: 0;
-    
-    display: flex;
     justify-content: center;
   }
-  .top-bar {
+
+
+
+.Title {
+  font-size: 1.5rem;
+  text-align: center;
+  justify-items: center;
+  
+}
+
+.header .menu-toggle {
+  position: absolute;
+  left: 0;
+}
+
+
+/* Barra superior fixa */
+.top-bar {
   background-color: #eecc77;
   padding: 0.5rem;
   position: fixed;
@@ -20,73 +34,104 @@
   display: flex;
   justify-content: flex-start;
 }
-/* Título do header */
-.top-bar-title {
-  margin: 0 auto;          /* Centraliza horizontalmente */
-  text-align: center;      /* Centraliza texto dentro do elemento */
-  line-height: 60px;       /* Alinha verticalmente no header (que tem 60px) */
-  font-size: 1.5rem;       /* Deixa o tamanho responsivo */
-  font-weight: 600;
-  color: #000000;
-  width: 100%;             /* Faz o título ocupar toda a largura disponível */
-}
-  #menu-toggle {
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: #333;
-  cursor: pointer;
+
+/* Menu hambúrguer atualizado */
+header {
+  width: 90%;
+  background-color: transparent;
+  padding: 1rem;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  justify-content: center;
 }
 
-/* Menu lateral - ocupa 100% da tela */
-.side-menu {
+
+
+/* Botão do menu */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 30; /* sempre acima do menu */
+  position: fixed; /* fixar no canto da tela */
+  top: 20px;
+  left: 20px;
+}
+
+/* Quando o menu lateral estiver aberto, esconder o botão */
+.nav-list.show ~ .menu-toggle {
+  display: none;
+  top:0;
+}
+
+.menu-toggle span {
+  background: #333;
+  height: 3px;
+  margin: 4px 0;
+  width: 25px;
+  border-radius: 2px;
+}
+/* Menu lateral */
+.nav-list {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -300px; /* escondido inicialmente */
   height: 100vh;
-  width: 25vw;
-  background-color: rgba(255, 255, 255, 0.98);
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 9;
-  transition: all 0.3s ease;
-}
-
-.side-menu.open {
+  width: 260px;
+  background-color: white;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.2);
+  padding: 2rem 1rem;
+  transition: left 0.3s ease;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 15;
 }
 
-.side-menu ul {
+.nav-list li {
   list-style: none;
-  padding: 0;
-  width: 100%;
-}
-
-.side-menu li {
-  padding: 1rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.side-menu a {
-  color: #000;
+.nav-list li a {
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2rem;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
 }
 
-.side-menu a:hover {
-  text-decoration: underline;
+.nav-list.show {
+  left: 0;
 }
+
+.header h1{
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0;
+  text-align: center;
+  font-family: 'inder', sans-serif;
+}
+
     /* Estilo do container principal */
   #app {
     max-width: 480px;
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
   }
   h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom:2px;
     color: #4a3a7c;
   }
   .task-list {
@@ -104,7 +149,7 @@
     box-shadow: 0 1px 4px rgb(0 0 0 / 0.1);
   }
   .task input[type="checkbox"] {
-    width: 20px;
+    width: 100px;
     height: 20px;
     cursor: pointer;
   }

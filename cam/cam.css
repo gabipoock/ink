@@ -25,21 +25,50 @@ body {
   display: flex;
   flex-direction: column;
   padding-top: 0%;
-  padding-bottom: 60px;
+  padding-bottom: 70px;
 }
+
+.header .menu-toggle {
+  position: absolute;
+  left: 0;
+}
+
+
+/* Barra superior fixa */
+.top-bar {
+  background-color: #eecc77;
+  padding: 0.5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Menu hambúrguer atualizado */
+
 .navbar {
   position: relative;
   display: flex;
   align-items: center;
 }
 
+/* Botão do menu */
 .menu-toggle {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  z-index: 20;
-  margin-left: 20px;
-  margin-top: 7px;
+  z-index: 30; /* sempre acima do menu */
+  position: fixed; /* fixar no canto da tela */
+  top: 20px;
+  left: 20px;
+}
+
+/* Quando o menu lateral estiver aberto, esconder o botão */
+.nav-list.show ~ .menu-toggle {
+  display: none;
+  top:0;
 }
 
 .menu-toggle span {
@@ -48,19 +77,17 @@ body {
   margin: 4px 0;
   width: 25px;
   border-radius: 2px;
-  
 }
-
-/* Menu lateral estilo slide */
+/* Menu lateral */
 .nav-list {
   position: fixed;
-  top: 0px;
+  top: 0;
   left: -300px; /* escondido inicialmente */
   height: 100vh;
-  width: 20vw;
+  width: 260px;
   background-color: white;
   box-shadow: 4px 0 12px rgba(0, 0, 0, 0.2);
-  padding: 2rem 2rem;
+  padding: 2rem 1rem;
   transition: left 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -70,9 +97,8 @@ body {
 
 .nav-list li {
   list-style: none;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   text-align: center;
-  
 }
 
 .nav-list li a {
@@ -87,6 +113,7 @@ body {
 .nav-list.show {
   left: 0;
 }
+
 /* Header fixo no topo */
 header {
   background-color: #7a35b6; /* roxo escuro */
@@ -103,16 +130,24 @@ header {
   user-select: none;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  text-align: center;
+  justify-content: center;
+
 }
+
+
+
 /* Título do header */
-.top-bar-title {
-  margin: 0 auto;          /* Centraliza horizontalmente */
-  text-align: center;      /* Centraliza texto dentro do elemento */
+.header .Title {
+  text-align: center;  /* Centraliza horizontalmente */
   line-height: 60px;       /* Alinha verticalmente no header (que tem 60px) */
   font-size: 1.5rem;       /* Deixa o tamanho responsivo */
   font-weight: 600;
-  color: #ddd;
-  width: 100%;             /* Faz o título ocupar toda a largura disponível */
+  color: #f0f0f0;;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 80%; /* Define uma largura para o título */
+  margin-left: auto; /* Otimiza o espaçamento da margem esquerda */
+  margin-right: auto; /
 }
 
 /* Espaço para conteúdo abaixo do header */
